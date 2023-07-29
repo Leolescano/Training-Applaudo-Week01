@@ -1,8 +1,8 @@
-package ejercicio01.entities;
+package exercise01.entities;
 
-import ejercicio01.interfaces.Average;
-import ejercicio01.interfaces.Max;
-import ejercicio01.interfaces.Min;
+import exercise01.interfaces.Average;
+import exercise01.interfaces.Max;
+import exercise01.interfaces.Min;
 import lombok.Getter;
 
 public class Calculation extends ArrayClass implements Max, Min, Average {

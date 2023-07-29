@@ -1,4 +1,4 @@
-package ejercicio01.entities;
+package exercise01.entities;
 
 import java.util.Random;
 import lombok.Getter;

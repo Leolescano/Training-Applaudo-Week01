@@ -1,4 +1,4 @@
-package ejercicio01.interfaces;
+package exercise01.interfaces;
 
 public interface Average {
   void setAverage();
