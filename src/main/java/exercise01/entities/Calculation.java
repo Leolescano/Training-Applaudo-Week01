@@ -58,6 +58,7 @@ public class Calculation extends ArrayClass implements Max, Min, Average {
 
   @Override
   public String toString() {
+    this.showArray();
     return String.format(
         """
 				The maximum number in the array is: %d

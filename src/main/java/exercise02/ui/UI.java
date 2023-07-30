@@ -1,20 +1,21 @@
 package exercise02.ui;
 
 import exercise02.entities.OtherVehicle;
-import exercise02.entities.RacingVehicles;
-import exercise02.entities.TripData;
+import exercise02.utils.Utils;
+import exercise02.interfaces.Menu;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UI {
-  public static void showMenu() {
+public class UI implements Menu {
+  @Override
+  public void showMenu() {
     Scanner sc = new Scanner(System.in);
     String opVehicle;
     double distanceInMeters = 0;
     int speed = 0;
     String type = "";
     boolean flag = true;
-    RacingVehicles vehicles;
     System.out.println(
         """
 				Choose the vehicle with which you will travel
@@ -32,11 +33,11 @@ public class UI {
         && !opVehicle.equals("4")
         && !opVehicle.equals("5"));
     if (opVehicle.equals("5")) {
-      flag = false;
+      return;
     }
     if (opVehicle.equals("4")) {
-      speed = OtherVehicle.speedOtherVehicle();
       type = OtherVehicle.typeOtherVehicle();
+      speed = OtherVehicle.speedOtherVehicle();
     }
     while (flag) {
       try {
@@ -48,6 +49,6 @@ public class UI {
         sc.nextLine();
       }
     }
-    TripData.trip(Double.parseDouble(opVehicle), distanceInMeters, type, speed);
+    Utils.trip(opVehicle, distanceInMeters, type, speed);
   }
 }

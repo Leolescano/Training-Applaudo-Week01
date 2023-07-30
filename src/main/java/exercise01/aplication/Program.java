@@ -7,11 +7,10 @@ public class Program {
 
     Calculation calc = new Calculation();
 
-    calc.showArray(); // Showing the array
     System.out.println(calc);
 
     calc.setArray(); // Restarting the array
-    calc.showArray();
+
     System.out.println(calc);
   }
 }
