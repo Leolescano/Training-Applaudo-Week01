@@ -1,4 +1,4 @@
-package exercise01.entities;
+package exercise01.models;
 
 import exercise01.interfaces.Average;
 import exercise01.interfaces.Max;

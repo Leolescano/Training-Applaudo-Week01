@@ -1,10 +1,10 @@
 package exercise02.aplication;
 
-import exercise02.ui.UI;
+import exercise02.ux.UX;
 
 public class Program {
   public static void main(String[] args) {
-    UI ui = new UI();
-    ui.showMenu();
+    UX ux = new UX();
+    ux.showMenu();
   }
 }

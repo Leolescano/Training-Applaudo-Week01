@@ -1,4 +1,4 @@
-package exercise02.entities;
+package exercise02.models;
 
 import java.util.Scanner;
 

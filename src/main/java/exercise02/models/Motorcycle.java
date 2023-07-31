@@ -1,4 +1,4 @@
-package exercise02.entities;
+package exercise02.models;
 
 public class Motorcycle extends RacingVehicles {
   public Motorcycle() {

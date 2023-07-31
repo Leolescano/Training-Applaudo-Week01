@@ -1,4 +1,4 @@
-package exercise02.entities;
+package exercise02.models;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 public abstract class RacingVehicles {
   @Getter protected double speed;
 
-  @Getter @Setter protected String type;
+  @Getter protected String type;
 
   public RacingVehicles(double speed) {
     this.speed = speed;

@@ -1,6 +1,6 @@
 package exercise01.aplication;
 
-import exercise01.entities.Calculation;
+import exercise01.models.Calculation;
 
 public class Program {
   public static void main(String[] args) {

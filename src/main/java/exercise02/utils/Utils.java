@@ -1,6 +1,6 @@
 package exercise02.utils;
 
-import exercise02.entities.*;
+import exercise02.models.*;
 
 public final class Utils {
   public static RacingVehicles createVehicle(String opVehicle, String type, int speed) {

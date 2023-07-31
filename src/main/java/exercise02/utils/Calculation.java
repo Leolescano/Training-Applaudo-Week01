@@ -1,6 +1,6 @@
 package exercise02.utils;
 
-import exercise02.entities.RacingVehicles;
+import exercise02.models.RacingVehicles;
 
 public class Calculation {
   private static void showCalculation(RacingVehicles vehicle, double distanceInKm, int[] times) {

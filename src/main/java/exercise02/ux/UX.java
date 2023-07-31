@@ -1,12 +1,12 @@
-package exercise02.ui;
+package exercise02.ux;
 
-import exercise02.entities.OtherVehicle;
+import exercise02.models.OtherVehicle;
 import exercise02.interfaces.Menu;
 import exercise02.utils.Utils;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class UI implements Menu {
+public class UX implements Menu {
   @Override
   public void showMenu() {
     Scanner sc = new Scanner(System.in);
