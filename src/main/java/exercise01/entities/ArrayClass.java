@@ -17,8 +17,6 @@ public abstract class ArrayClass {
     }
   }
 
-  abstract void setArray();
-
   public void showArray() {
     System.out.print("[");
     for (int number : this.array) {
@@ -26,4 +24,6 @@ public abstract class ArrayClass {
     }
     System.out.print("]\n");
   }
+
+  abstract void setArray();
 }

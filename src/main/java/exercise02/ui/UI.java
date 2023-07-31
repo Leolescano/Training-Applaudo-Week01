@@ -1,9 +1,8 @@
 package exercise02.ui;
 
 import exercise02.entities.OtherVehicle;
-import exercise02.utils.Utils;
 import exercise02.interfaces.Menu;
-
+import exercise02.utils.Utils;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
