@@ -21,7 +21,7 @@ public class User extends Element {
   public String toString() {
     return String.format(
         """
-				------------------------
+				--------------------
 				User name : %s
 				First name: %s
 				Last name: %s

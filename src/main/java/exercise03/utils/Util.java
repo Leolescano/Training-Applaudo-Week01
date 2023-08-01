@@ -7,6 +7,7 @@ import exercise03.models.Product;
 import exercise03.models.User;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Util {
   static final Scanner SC = new Scanner(System.in);
@@ -49,11 +50,24 @@ public class Util {
   }
 
   public static Element createCountry() {
+    String pattern = "^[A-Z]{2}$";
     Country country = new Country();
     country.setName(enterName("country"));
-    System.out.print("Enter the ISO country code: ");
-    String isoCode = SC.next();
-    country.setIsoCode(isoCode);
+    do {
+      try {
+        System.out.print("Enter the ISO country code ('US'): ");
+        String isoCode = SC.next();
+        boolean valid = Pattern.matches(pattern, isoCode);
+        if (valid) {
+          country.setIsoCode(isoCode);
+          break;
+        } else {
+          throw new InvalidDatesException("This is NOT a valid ISO 3166-1 alpha-2 country code.");
+        }
+      } catch (InvalidDatesException e) {
+        System.out.println(e.getMessage());
+      }
+    } while (true);
     SC.nextLine();
     return country;
   }

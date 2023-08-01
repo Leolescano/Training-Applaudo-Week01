@@ -25,8 +25,9 @@ public final class Utils {
     Scanner sc = new Scanner(System.in);
     while (true) {
       try {
-        System.out.print("Enter the number of meters to travel: ");
+        System.out.print("\nEnter the number of meters to travel: ");
         double distanceInMeters = sc.nextDouble();
+        System.out.println();
         if (distanceInMeters > 0) {
           return distanceInMeters;
         } else {

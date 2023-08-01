@@ -24,6 +24,7 @@ public class UX implements UXInterface {
     while (true) {
       System.out.printf(
           """
+
               Choose the vehicle with which you will travel
               1) Bike - Speed 6km/h
               2) Car - Speed 60km/h

@@ -5,10 +5,7 @@ import exercise03.interfaces.Count;
 import exercise03.interfaces.Find;
 import exercise03.interfaces.Save;
 import exercise03.interfaces.ShowRepository;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import lombok.Getter;
 
 public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository {
@@ -65,9 +62,12 @@ public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository {
   @Override
   public void showRepository() {
     if (this.repository.size() > 0) {
+      int cont = 1;
       System.out.println();
       for (T element : this.repository) {
+        System.out.print(cont + " -> ");
         System.out.println(element);
+        cont++;
       }
     } else {
       System.out.println("The repository is empty\n");

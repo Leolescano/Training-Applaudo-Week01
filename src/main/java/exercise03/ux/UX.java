@@ -18,13 +18,16 @@ public class UX implements UXInterface {
     while (flag) {
       System.out.println(
           """
-				Choose repository to work:
+				\n
+
+    Choose repository to work:
 					P) 'P'roducts repository
 					C) 'C'ountries repository
 					U) 'U'sers repository
 					F) 'F'inish jobs""");
       System.out.print("OP: ");
-      op = SC.next().toUpperCase();
+      op = SC.nextLine().toUpperCase();
+      System.out.println();
       switch (op) {
         case "P" -> showMenuRepository(productRepository, "Products");
         case "C" -> showMenuRepository(countryRepository, "Countries");
