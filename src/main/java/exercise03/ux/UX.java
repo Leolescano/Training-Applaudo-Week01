@@ -1,14 +1,15 @@
 package exercise03.ux;
 
+import exercise03.interfaces.UXInterface;
 import exercise03.models.*;
 import exercise03.utils.Util;
 import java.util.Scanner;
 
-public class UX {
+public class UX implements UXInterface {
 
   static final Scanner SC = new Scanner(System.in);
 
-  public static void showMenu() {
+  public void showMenu() {
     String op;
     boolean flag = true;
     Repository<Element> productRepository = new Repository<>();
@@ -40,7 +41,7 @@ public class UX {
     System.out.println("You logged out of the system");
   }
 
-  public static void showMenuRepository(Repository<Element> repository, String typeRepository) {
+  public void showMenuRepository(Repository<Element> repository, String typeRepository) {
     String op;
     boolean flag = true;
     Element element = null;

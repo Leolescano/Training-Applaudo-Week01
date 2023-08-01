@@ -1,14 +1,16 @@
 package exercise02.ux;
 
+import exercise02.interfaces.UXInterface;
 import exercise02.models.OtherVehicle;
 import exercise02.models.RacingVehicles;
 import exercise02.utils.CalculationTime;
 import exercise02.utils.Utils;
 import java.util.Scanner;
 
-public class UX {
+public class UX implements UXInterface {
 
-  public static void showMenu() {
+  @Override
+  public void showMenu() {
     Scanner sc = new Scanner(System.in);
     RacingVehicles vehicle = null;
 
