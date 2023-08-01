@@ -6,25 +6,25 @@ public class Calculation {
   private static void showCalculation(RacingVehicles vehicle, double distanceInKm, int[] times) {
     if (times[0] == 0) {
       System.out.printf(
-              "At a speed of %.0f km/h the %S would take %,.2fkm: %d:%d:%d.%d \n",
-              vehicle.getSpeed(),
-              vehicle.getType(),
-              distanceInKm,
-              times[1],
-              times[2],
-              times[3],
-              times[4]);
+          "At a speed of %.0f km/h the %S would take %,.2fkm: %d:%d:%d.%d \n\n",
+          vehicle.getSpeed(),
+          vehicle.getType(),
+          distanceInKm,
+          times[1],
+          times[2],
+          times[3],
+          times[4]);
     } else {
       System.out.printf(
-              "At a speed of %.0f km/h the %S would take %,.2fkm: %d Days %d:%d:%d.%d \n",
-              vehicle.getSpeed(),
-              vehicle.getType(),
-              distanceInKm,
-              times[0],
-              times[1],
-              times[2],
-              times[3],
-              times[4]);
+          "At a speed of %.0f km/h the %S would take %,.2fkm: %d Days %d:%d:%d.%d \n\n",
+          vehicle.getSpeed(),
+          vehicle.getType(),
+          distanceInKm,
+          times[0],
+          times[1],
+          times[2],
+          times[3],
+          times[4]);
     }
   }
 

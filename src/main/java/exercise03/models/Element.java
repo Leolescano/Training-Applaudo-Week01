@@ -4,11 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @AllArgsConstructor
 @NoArgsConstructor
 public abstract class Element {
 
-	@Getter @Setter
-	protected String name;
-
+  @Getter @Setter protected String name;
 }

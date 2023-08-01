@@ -1,9 +1,13 @@
 package exercise02.utils;
 
+import exercise02.exceptions.DistanceInMetersException;
 import exercise02.models.*;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public final class Utils {
-  public static RacingVehicles createVehicle(String opVehicle, String type, int speed) {
+  public static RacingVehicles createVehicle(String opVehicle) {
     switch (opVehicle) {
       case "1" -> {
         return new Bike();
@@ -14,15 +18,31 @@ public final class Utils {
       case "3" -> {
         return new Motorcycle();
       }
-      case "4" -> {
-        return new OtherVehicle(speed, type);
-      }
     }
     return null;
   }
 
-  public static void trip(String opVehicle, double distanceInMeters, String type, int speed) {
-    RacingVehicles vehicle = createVehicle(opVehicle, type, speed);
+  public static void trip(RacingVehicles vehicle, double distanceInMeters) {
     Calculation.calculationTime(vehicle, distanceInMeters);
+  }
+
+  public static double enterDistanceInMeters() {
+    Scanner sc = new Scanner(System.in);
+    while (true) {
+      try {
+        System.out.print("Enter the number of meters to travel: ");
+        double distanceInMeters = sc.nextDouble();
+        if (distanceInMeters > 0) {
+          return distanceInMeters;
+        } else {
+          throw  new DistanceInMetersException("The distance must be greater than zero.");
+        }
+      } catch (InputMismatchException e) {
+        System.out.println("You must enter a number for the program to continue");
+        sc.nextLine();
+      } catch (DistanceInMetersException e) {
+        System.out.println(e.getMessage());
+      }
+    }
   }
 }
