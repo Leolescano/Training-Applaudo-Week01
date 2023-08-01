@@ -4,13 +4,17 @@ import exercise02.models.RacingVehicles;
 
 public class CalculationTime {
 
-
   private static void showCalculation(RacingVehicles vehicle, double distanceInKm, int[] times) {
     if (times[0] == 0) {
       System.out.printf(
-          "At a speed of %.0f km/h the %s would take %,.2fkm: %d:%d:%d.%d \n\n",
-          vehicle.getSpeed(),
+          """
+              \nType: %s
+              Speed: %.0f km/h
+              Distance: %,.2fkm
+              Time it takes: %d:%d:%d.%d
+              """,
           vehicle.getType(),
+          vehicle.getSpeed(),
           distanceInKm,
           times[1],
           times[2],
@@ -18,9 +22,14 @@ public class CalculationTime {
           times[4]);
     } else {
       System.out.printf(
-          "At a speed of %.0f km/h the %s would take %,.2fkm: %d Days %d:%d:%d.%d \n\n",
-          vehicle.getSpeed(),
+          """
+              \nType: %s
+              Speed: %.0f km/h
+              Distance: %,.2fkm
+              Time it takes: %d Days %d:%d:%d.%d
+             """,
           vehicle.getType(),
+          vehicle.getSpeed(),
           distanceInKm,
           times[0],
           times[1],
@@ -31,12 +40,12 @@ public class CalculationTime {
   }
 
   public static void calculationTime(RacingVehicles vehicles, double distance) {
-    int[] times = new int[5]; // 5 posiciones para DIAS, HORAS, MINUTOS, SEGUNDOS Y MILESIMAS
+    int[] times = new int[5]; // 5 posiciones para DIAS, HORAS, MINUTOS, SEGUNDOS Y MILÉSIMAS
     double distanceInKm = distance / 1000;
-    double totalMilliseconds = (distanceInKm / vehicles.getSpeed()) * 60 * 60 * 1000;
+    long totalMilliseconds = (long) ((distanceInKm / vehicles.getSpeed()) * 60 * 60 * 1000);
 
-    int seconds = (int) totalMilliseconds / 1000;
-    int milliseconds = (int) totalMilliseconds % 1000;
+    int seconds = (int) (totalMilliseconds / 1000);
+    int milliseconds = (int) (totalMilliseconds % 1000);
     int minutes = seconds / 60;
     seconds = seconds % 60;
     int hours = minutes / 60;

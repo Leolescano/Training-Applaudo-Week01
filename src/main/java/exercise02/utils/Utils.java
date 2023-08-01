@@ -2,7 +2,6 @@ package exercise02.utils;
 
 import exercise02.exceptions.DistanceInMetersException;
 import exercise02.models.*;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -31,7 +30,7 @@ public final class Utils {
         if (distanceInMeters > 0) {
           return distanceInMeters;
         } else {
-          throw  new DistanceInMetersException("The distance must be greater than zero.");
+          throw new DistanceInMetersException("The distance must be greater than zero.");
         }
       } catch (InputMismatchException e) {
         System.out.println("You must enter a number for the program to continue");

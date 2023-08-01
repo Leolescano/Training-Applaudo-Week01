@@ -2,7 +2,7 @@ package exercise02.models;
 
 public class Bike extends RacingVehicles {
   public Bike() {
-    super(6);
+    super(1);
     this.type = "Bike";
   }
 }

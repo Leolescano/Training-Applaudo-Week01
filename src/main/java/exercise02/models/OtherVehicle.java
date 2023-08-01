@@ -1,8 +1,6 @@
 package exercise02.models;
 
 import exercise02.exceptions.SpeedException;
-import exercise03.exceptions.InvalidDatesException;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -34,8 +32,8 @@ public class OtherVehicle extends RacingVehicles {
           throw new SpeedException("Velocity must be greater than zero");
         }
       } catch (InputMismatchException e) {
-          System.out.println("Invalid speed value");
-          sc.nextLine();
+        System.out.println("Invalid speed value");
+        sc.nextLine();
       } catch (SpeedException e) {
         System.out.println(e.getMessage());
       }

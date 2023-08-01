@@ -20,32 +20,37 @@ public class UX {
     int speed = 0;
 
     while (true) {
-      System.out.printf("""
+      System.out.printf(
+          """
               Choose the vehicle with which you will travel
               1) Bike - Speed 6km/h
               2) Car - Speed 60km/h
               3) Motorcycle - Speed 80km/h
               4) %s - Speed %dKm/h    %s
-              5) Exit%n""", type, speed, question);
+              5) Exit%n""",
+          type, speed, question);
       System.out.print("OP: ");
       opVehicle = sc.next();
       switch (opVehicle) {
-        case "1","2","3" -> {
+        case "1", "2", "3" -> {
           vehicle = Utils.createVehicle(opVehicle);
+          distanceInMeters = Utils.enterDistanceInMeters();
+          CalculationTime.calculationTime(vehicle, distanceInMeters);
         }
         case "4" -> {
           type = OtherVehicle.typeOtherVehicle();
           speed = OtherVehicle.speedOtherVehicle(type);
           question = "Another vehicle?";
           vehicle = new OtherVehicle(speed, type);
+          distanceInMeters = Utils.enterDistanceInMeters();
+          CalculationTime.calculationTime(vehicle, distanceInMeters);
         }
         case "5" -> {
           System.out.println("Thanks for using the system.");
           return;
         }
+        default -> System.out.println("Enter a valid option.");
       }
-      distanceInMeters = Utils.enterDistanceInMeters();
-      CalculationTime.calculationTime(vehicle, distanceInMeters);
     }
   }
 }
