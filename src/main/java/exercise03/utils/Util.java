@@ -31,7 +31,7 @@ public class Util {
 
     String nameProduct = null;
     while (!valid) {
-      nameProduct = enterName("country");
+      nameProduct = enterName("product");
       valid = validateName(nameProduct);
     }
     product.setName(nameProduct);
@@ -113,7 +113,6 @@ public class Util {
         boolean valid = Pattern.matches(pattern, isoCode);
         if (valid) {
           return isoCode;
-
         } else {
           throw new InvalidDatesException("This is NOT a valid ISO 3166-1 alpha-2 country code.");
         }

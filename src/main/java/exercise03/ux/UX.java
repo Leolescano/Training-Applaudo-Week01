@@ -7,8 +7,6 @@ import exercise03.utils.Util;
 
 public class UX implements UXInterface {
 
-  // static final Scanner SC = new Scanner(System.in);
-
   public void showMenu() {
     String op;
     boolean flag = true;
@@ -60,7 +58,8 @@ public class UX implements UXInterface {
 					2) Count to repository
 					3) Find to repository
 					4) Show Repository
-					5) Back to previous menu%n""",
+					5) Delete element
+					6) Back to previous menu%n""",
           typeRepository);
       System.out.print("OP: ");
       op = Utils.SC.nextLine();
@@ -81,7 +80,10 @@ public class UX implements UXInterface {
         case "4" -> {
           repository.showRepository();
         }
-        case "5" -> flag = false;
+        case "5" -> {
+          repository.deleteElement();
+        }
+        case "6" -> flag = false;
       }
     }
   }

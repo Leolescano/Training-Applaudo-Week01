@@ -2,14 +2,12 @@ package exercise03.models;
 
 import exercise02.utils.Utils;
 import exercise03.exceptions.InvalidDatesException;
-import exercise03.interfaces.Count;
-import exercise03.interfaces.Find;
-import exercise03.interfaces.Save;
-import exercise03.interfaces.ShowRepository;
+import exercise03.interfaces.*;
+
 import java.util.*;
 import lombok.Getter;
 
-public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository {
+public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository, DeleteElement {
 
   @Getter private List<T> repository;
 
@@ -71,6 +69,33 @@ public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository {
       }
     } else {
       System.out.println("The repository is empty");
+    }
+  }
+
+  @Override
+  public void deleteElement() {
+    int index;
+    if (this.repository.size() == 0) {
+      System.out.println("The repository is empty");
+    }
+    while (true) {
+      try {
+        System.out.print("Entre la posicion del elemento: ");
+        index = Utils.SC.nextInt() - 1;
+        Utils.SC.nextLine();
+        if (index < this.repository.size() && index >= 0) {
+          this.repository.remove(index);
+          System.out.println("El elemento fue eliminado con exito");
+          return;
+        } else {
+          throw new InvalidDatesException("That position does not exist in the repository");
+        }
+      } catch (InputMismatchException e) {
+        System.out.println("You must enter an integer.");
+        Utils.SC.nextLine();
+      } catch (InvalidDatesException e) {
+        System.out.println(e.getMessage());
+      }
     }
   }
 }
