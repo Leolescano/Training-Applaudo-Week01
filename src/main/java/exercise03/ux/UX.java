@@ -1,13 +1,13 @@
 package exercise03.ux;
 
+import exercise02.utils.Utils;
 import exercise03.interfaces.UXInterface;
 import exercise03.models.*;
 import exercise03.utils.Util;
-import java.util.Scanner;
 
 public class UX implements UXInterface {
 
-  static final Scanner SC = new Scanner(System.in);
+  // static final Scanner SC = new Scanner(System.in);
 
   public void showMenu() {
     String op;
@@ -18,23 +18,21 @@ public class UX implements UXInterface {
     while (flag) {
       System.out.println(
           """
-				\n
 
     Choose repository to work:
-					P) 'P'roducts repository
-					C) 'C'ountries repository
-					U) 'U'sers repository
-					F) 'F'inish jobs""");
+        P) 'P'roducts repository
+        C) 'C'ountries repository
+        U) 'U'sers repository
+        F) 'F'inish jobs""");
       System.out.print("OP: ");
-      op = SC.nextLine().toUpperCase();
-      System.out.println();
+      op = Utils.SC.nextLine().toUpperCase();
       switch (op) {
         case "P" -> showMenuRepository(productRepository, "Products");
         case "C" -> showMenuRepository(countryRepository, "Countries");
         case "U" -> showMenuRepository(userRepository, "Users");
         case "F" -> {
           System.out.print("Are you sure you want to log out? Y/N: ");
-          String exit = SC.next().toUpperCase();
+          String exit = Utils.SC.nextLine().toUpperCase();
           if (exit.equals("Y")) {
             flag = false;
           }
@@ -56,7 +54,8 @@ public class UX implements UXInterface {
     while (flag) {
       System.out.printf(
           """
-				What would you like to do with the %s repository??
+
+				What would you like to do with the %s repository?
 					1) Save to repository
 					2) Count to repository
 					3) Find to repository
@@ -64,7 +63,7 @@ public class UX implements UXInterface {
 					5) Back to previous menu%n""",
           typeRepository);
       System.out.print("OP: ");
-      op = SC.next();
+      op = Utils.SC.nextLine();
       switch (op) {
         case "1" -> {
           assert element != null;

@@ -1,5 +1,6 @@
 package exercise03.models;
 
+import exercise02.utils.Utils;
 import exercise03.exceptions.InvalidDatesException;
 import exercise03.interfaces.Count;
 import exercise03.interfaces.Find;
@@ -19,7 +20,7 @@ public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository {
   @Override
   public void save(T element) {
     this.repository.add(element);
-    System.out.println("The element was saved successfully\n");
+    System.out.println("The element was saved successfully");
   }
 
   @Override
@@ -27,31 +28,30 @@ public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository {
     if (this.repository.size() > 0) {
       System.out.printf("The repository contains %d %s\n", this.repository.size(), typeRepository);
     } else {
-      System.out.println("The repository is empty\n");
+      System.out.println("The repository is empty");
     }
   }
 
   @Override
   public T find(String typeRepository) {
-    Scanner sc = new Scanner(System.in);
     int index;
     if (this.repository.size() == 0) {
-      System.out.println("The repository is empty\n");
+      System.out.println("The repository is empty");
       return null;
     }
     while (true) {
       try {
         System.out.printf("Enter the position of the %s within the repository: ", typeRepository);
-        index = sc.nextInt() - 1;
+        index = Utils.SC.nextInt() - 1;
+        Utils.SC.nextLine();
         if (index < this.repository.size() && index >= 0) {
-          sc.nextLine();
           return this.repository.get(index);
         } else {
-          throw new InvalidDatesException("That position does not exist in the repository\n");
+          throw new InvalidDatesException("That position does not exist in the repository");
         }
       } catch (InputMismatchException e) {
         System.out.println("You must enter an integer.");
-        sc.nextLine();
+        Utils.SC.nextLine();
       } catch (InvalidDatesException e) {
         System.out.println(e.getMessage());
         return null;
@@ -66,11 +66,11 @@ public class Repository<T> implements Save<T>, Count, Find<T>, ShowRepository {
       System.out.println();
       for (T element : this.repository) {
         System.out.print(cont + " -> ");
-        System.out.println(element);
+        System.out.print(element);
         cont++;
       }
     } else {
-      System.out.println("The repository is empty\n");
+      System.out.println("The repository is empty");
     }
   }
 }

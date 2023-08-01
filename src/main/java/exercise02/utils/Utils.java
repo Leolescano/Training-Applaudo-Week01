@@ -6,6 +6,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public final class Utils {
+  public static final Scanner SC = new Scanner(System.in);
+
   public static RacingVehicles createVehicle(String opVehicle) {
     switch (opVehicle) {
       case "1" -> {
@@ -22,11 +24,10 @@ public final class Utils {
   }
 
   public static double enterDistanceInMeters() {
-    Scanner sc = new Scanner(System.in);
     while (true) {
       try {
         System.out.print("\nEnter the number of meters to travel: ");
-        double distanceInMeters = sc.nextDouble();
+        double distanceInMeters = SC.nextDouble();
         System.out.println();
         if (distanceInMeters > 0) {
           return distanceInMeters;
@@ -35,7 +36,7 @@ public final class Utils {
         }
       } catch (InputMismatchException e) {
         System.out.println("You must enter a number for the program to continue");
-        sc.nextLine();
+        SC.nextLine();
       } catch (DistanceInMetersException e) {
         System.out.println(e.getMessage());
       }

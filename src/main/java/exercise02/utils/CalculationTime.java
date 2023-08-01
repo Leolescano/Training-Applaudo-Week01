@@ -6,13 +6,12 @@ public class CalculationTime {
 
   private static void showCalculation(RacingVehicles vehicle, double distanceInKm, int[] times) {
     String day = times[0] > 0 ? String.format("%s Days", times[0]) : "";
-    //    if (times[0] == 0) {
     System.out.printf(
         """
               Type: %s
               Speed: %.0f km/h
-              Distance: %,.4fkm
-              Time it takes: %s %dH-%dM-%dS-%dML
+              Distance: %,.3fkm
+              Time it takes: %s %d Horas %d Minutos %d.%d Segundos
               """,
         vehicle.getType(),
         vehicle.getSpeed(),
@@ -22,23 +21,8 @@ public class CalculationTime {
         times[2],
         times[3],
         times[4]);
-    //    } else {
-    //      System.out.printf(
-    //          """
-    //              \nType: %s
-    //              Speed: %.0f km/h
-    //              Distance: %,.2fkm
-    //              Time it takes: %d Days %d:%d:%d.%d
-    //             """,
-    //          vehicle.getType(),
-    //          vehicle.getSpeed(),
-    //          distanceInKm,
-    //          times[0],
-    //          times[1],
-    //          times[2],
-    //          times[3],
-    //          times[4]);
-    //    }
+    System.out.print("Press any key to continue.");
+    Utils.SC.nextLine();
   }
 
   public static void calculationTime(RacingVehicles vehicles, double distance) {

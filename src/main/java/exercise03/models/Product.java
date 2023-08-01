@@ -18,7 +18,7 @@ public class Product extends Element {
   public String toString() {
     return String.format(
         """
-				--------------------
+				-------------------
 				Product	Name: %s
 				Stock: %d
 				------------------------

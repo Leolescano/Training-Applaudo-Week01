@@ -5,13 +5,12 @@ import exercise02.models.OtherVehicle;
 import exercise02.models.RacingVehicles;
 import exercise02.utils.CalculationTime;
 import exercise02.utils.Utils;
-import java.util.Scanner;
 
 public class UX implements UXInterface {
 
   @Override
   public void showMenu() {
-    Scanner sc = new Scanner(System.in);
+    // Scanner sc = new Scanner(System.in);
     RacingVehicles vehicle = null;
 
     String opVehicle;
@@ -33,7 +32,7 @@ public class UX implements UXInterface {
               5) Exit%n""",
           type, speed, question);
       System.out.print("OP: ");
-      opVehicle = sc.next();
+      opVehicle = Utils.SC.nextLine();
       switch (opVehicle) {
         case "1", "2", "3" -> {
           vehicle = Utils.createVehicle(opVehicle);
@@ -54,6 +53,7 @@ public class UX implements UXInterface {
         }
         default -> System.out.println("Enter a valid option.");
       }
+      Utils.SC.nextLine();
     }
   }
 }

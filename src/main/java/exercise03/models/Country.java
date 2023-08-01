@@ -18,7 +18,7 @@ public class Country extends Element {
   public String toString() {
     return String.format(
         """
-				--------------------
+				-------------------
 				Country Name: %s
 				ISO Code: %s
 				------------------------
