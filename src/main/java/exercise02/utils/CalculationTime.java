@@ -2,11 +2,13 @@ package exercise02.utils;
 
 import exercise02.models.RacingVehicles;
 
-public class Calculation {
+public class CalculationTime {
+
+
   private static void showCalculation(RacingVehicles vehicle, double distanceInKm, int[] times) {
     if (times[0] == 0) {
       System.out.printf(
-          "At a speed of %.0f km/h the %S would take %,.2fkm: %d:%d:%d.%d \n\n",
+          "At a speed of %.0f km/h the %s would take %,.2fkm: %d:%d:%d.%d \n\n",
           vehicle.getSpeed(),
           vehicle.getType(),
           distanceInKm,
@@ -16,7 +18,7 @@ public class Calculation {
           times[4]);
     } else {
       System.out.printf(
-          "At a speed of %.0f km/h the %S would take %,.2fkm: %d Days %d:%d:%d.%d \n\n",
+          "At a speed of %.0f km/h the %s would take %,.2fkm: %d Days %d:%d:%d.%d \n\n",
           vehicle.getSpeed(),
           vehicle.getType(),
           distanceInKm,

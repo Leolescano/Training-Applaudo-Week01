@@ -22,10 +22,6 @@ public final class Utils {
     return null;
   }
 
-  public static void trip(RacingVehicles vehicle, double distanceInMeters) {
-    Calculation.calculationTime(vehicle, distanceInMeters);
-  }
-
   public static double enterDistanceInMeters() {
     Scanner sc = new Scanner(System.in);
     while (true) {
